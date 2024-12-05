@@ -20,7 +20,7 @@ namespace mock.depart.Controllers.Tests
         {
             Mock<CatsService> serviceMock = new Mock<CatsService>();
             Mock<CatsController> controller = new Mock<CatsController>(serviceMock.Object) { CallBase = true };
-            serviceMock.Setup(s => s.Delete(It.IsAny<int>())).Returns(value: null);
+            serviceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
             controller.Setup(s => s.UserId).Returns("1");
             var actionResult = controller.Object.DeleteCat(0);
             var result = actionResult.Result as NotFoundResult;
@@ -45,7 +45,7 @@ namespace mock.depart.Controllers.Tests
                 CuteLevel = Cuteness.Amazing
             };
 
-            serviceMock.Setup(s => s.Delete(It.IsAny<int>())).Returns(value: null);
+            serviceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
             controller.Setup(s => s.UserId).Returns("1");
             var actionResult = controller.Object.DeleteCat(0);
             var result = actionResult.Result as BadRequestObjectResult;
@@ -71,7 +71,7 @@ namespace mock.depart.Controllers.Tests
                 CuteLevel = Cuteness.Amazing
             };
 
-            serviceMock.Setup(s => s.Delete(It.IsAny<int>())).Returns(value: null);
+            serviceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
             controller.Setup(s => s.UserId).Returns("1");
             var actionResult = controller.Object.DeleteCat(0);
             var result = actionResult.Result as BadRequestObjectResult;
@@ -98,7 +98,7 @@ namespace mock.depart.Controllers.Tests
                 CuteLevel = Cuteness.Amazing
             };
 
-            serviceMock.Setup(s => s.Delete(It.IsAny<int>())).Returns(value: null);
+            serviceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
             controller.Setup(s => s.UserId).Returns("1");
             var actionResult = controller.Object.DeleteCat(0);
             var result = actionResult.Result as BadRequestObjectResult;
